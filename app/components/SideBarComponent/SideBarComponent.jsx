@@ -29,7 +29,8 @@ export default class SideBarComponent extends React.Component {
 		} else {
 			body = (
 			<ReactCollapse isOpened={this.expanded} className="SideBar">
-
+				<div className="collapseIcon" onClick={this.hideSideBar.bind(this)}>
+				</div>
 			<div >
 			<ul>
 
@@ -42,8 +43,7 @@ export default class SideBarComponent extends React.Component {
 
 			</ul>
 			</div>
-							<div className="collapseIcon" onClick={this.hideSideBar.bind(this)}>
-				</div>
+	
 			</ReactCollapse>
 			)
 		}
