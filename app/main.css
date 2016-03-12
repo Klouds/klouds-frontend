@@ -1,0 +1,134 @@
+body {
+	background: 					#161E29;
+	font-family: 					sans-serif;
+	font-variant: 					small-caps;
+}
+
+/*
+	--	Page  --
+	Handles the whole page
+ */
+.Page {
+	position:						float;
+	background:#FFFFFF;
+	border-radius: 0.5em 0.5em 0.5em 0.5em;
+	margin:							auto;
+	line-height: 					1em;
+	width: 							95%;
+	height: 100%;
+	border: 0px;
+	box-shadow: -5px 5px 100px #AAAAAA;
+}
+
+
+
+/*
+	--Header	
+*/
+.Header {
+	background: url("./images/header_banner.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 60%; 
+	background-size: cover;
+	border-radius: 0.25em 0.25em 0 0 ;
+	box-shadow: -1.5px -0.5px 10px #000000;
+	height:100px;
+}
+
+/*
+	-- Navigation Component
+ */
+.NavComponent {
+
+}
+
+/*
+
+	-- Login Component / Big / Small?
+*/
+.Login {
+
+}
+
+/*
+	LeftSideBar
+ */
+.SideBar {
+	float:right;
+	color:white;
+	margin-top:-1.15em;
+
+	background-color:#1A2C44;
+	float:right;
+	text-align: right;
+	width:150px;
+	box-shadow: -1.5px -0.5px 5px #000000;
+}
+
+.SideBar-collapse {
+	margin-top:-1.15em;
+	float:right;
+	color:white;
+	background: url('./images/collapse-menu.png');
+	background-size: cover;
+	float:right;
+	text-align: right;
+	width:30px;
+	height:30px;
+	box-shadow: -1.5px -0.5px 5px #000000;
+}
+
+.collapseIcon {
+	background: url('./images/collapse-menu.png');
+	background-size: cover;
+	background-color:#53687A;
+	float:right;
+	width:30px;
+	height:30px;
+}
+
+.SideBar ul {
+	margin-top:0.5em;
+	float:left;
+}
+.SideBar li{
+	list-style: none;
+
+}
+
+.Link {
+	
+	margin-right: 0em;
+	border: 0px;
+	background: transparent;
+	color:white;
+	font-size: 1em;
+	font-variant: small-caps;
+}
+
+.Link:hover {
+	background-color: #164F9A;
+	transition: 0.2s
+}
+
+.Link:focus {
+	outline: none;
+}
+/*
+	Content
+ */
+.Content {
+	float: left;
+	padding-top:1em;
+	margin-top:0.15em;
+	width:99.9%;
+	background: linear-gradient(to bottom , 
+		transparent,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7, #CCD7E7, #CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7, transparent);
+	height: 47em;
+	border: solid;
+	border-width: 0 0px 0px 0px;
+	border-color: #C7D0DD;
+	
+}
+
