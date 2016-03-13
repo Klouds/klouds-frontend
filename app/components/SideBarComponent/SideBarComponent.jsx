@@ -2,6 +2,7 @@ import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import {Link} from 'react-router'
 import ReactCollapse from 'react-collapse'
+import {presets} from 'react-motion'
 
 export default class SideBarComponent extends React.Component {
 	constructor(props) {
@@ -9,8 +10,9 @@ export default class SideBarComponent extends React.Component {
 		
 		//import the value from Alt Store
 		const {value} = this.props
-		const path = this.props.path
-		this.expanded = false;
+		this.state = {
+			expanded :false
+		}
 	}
 
 	componentWillMount() {
@@ -19,46 +21,36 @@ export default class SideBarComponent extends React.Component {
 
 	render() {
 
-		let body
+		var body = []
 
-		if (this.expanded === false) {
-			body = (
-				<div className="SideBar-collapse" onClick={this.expandSideBar.bind(this)} > 
-				</div>
-			)
-		} else {
-			body = (
-			<ReactCollapse isOpened={this.expanded} className="SideBar">
-				<div className="collapseIcon" onClick={this.hideSideBar.bind(this)}>
-				</div>
-			<div >
-			<ul>
-
-				<li><Link className="Link" to="/">Home</Link></li>
-				<li><Link className="Link" to="/pricing">Pricing</Link></li>
-				<li><Link className="Link" to="/products">Products</Link></li>
-				<li><Link className="Link" to="/about_us">About Us</Link></li>
-				<li><Link className="Link" to="/docs">Documentation</Link></li>
-				
-
-			</ul>
-			</div>
-	
+			body.push(
+			<ReactCollapse className="SideBar" isOpened={this.state.expanded} springConfig={presets.wobbly}>
+					<div >
+					<input defaultValue="Username"/>
+					<input defaultValue="Password"/>
+					<button >Login</button>
+					</div>	
 			</ReactCollapse>
 			)
-		}
+		
 
-		return body
+		return (
+				<div className="NavBar-collapse">
+					<button className="Link" to="/">Home</button>
+					<button className="Link" to="/pricing">Pricing</button>
+					<button className="Link" to="/products">Products</button>
+					<button className="Link" to="/about_us">About Us</button>
+					<button className="Link" to="/docs">Documentation</button>
+					<div className="SideBar-collapse" onClick={this.toggleSideBar.bind(this)} /> 
+					<br/>
+					{body}
+				</div>
+				)
 
 	}
 
-	expandSideBar() {
-		this.expanded = true
-		this.forceUpdate()
+	toggleSideBar() {
+		this.setState({expanded: !this.state.expanded})
 	}
 
-	hideSideBar() {
-		this.expanded = false
-		this.forceUpdate()
-	}
 }

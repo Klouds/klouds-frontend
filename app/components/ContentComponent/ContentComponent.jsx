@@ -2,12 +2,12 @@ import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import SideBarComponent from '../SideBarComponent/SideBarComponent.jsx'
 
-export default class ComponentTemplate extends React.Component {
+export default class ContentComponent extends React.Component {
 	constructor(props) {
 		super(props)
 		
 		//import the value from Alt Store
-		const {value, path, path2} = this.props
+		const {value} = this.props
 	}
 
 	componentWillMount() {
@@ -17,9 +17,29 @@ export default class ComponentTemplate extends React.Component {
 	render() {
 		return (
 			<div className="Content">
-				<SideBarComponent />
-				{this.props.path}<br/>
-				{this.props.path2}
+				<table width="100%">
+				<tbody>
+				<tr>
+				<td>
+				 <SideBarComponent />
+				</td>
+				</tr>
+				<tr>
+				<td height="75px">
+					Rawr
+				</td>
+				</tr>
+				<tr>
+				<td>
+				Put some content in here!
+				Yay!<br/>It grows! <br/>
+				<br/>
+				<br/>
+				BWHAHAHA<br/><br/>
+				</td>
+				</tr>
+				</tbody>
+				</table>
 			</div>
 			)
 

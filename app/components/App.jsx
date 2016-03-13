@@ -16,20 +16,12 @@ export default class App extends React.Component {
 	constructor(props) {
 		super(props)
 
-		let  path  = this.props.params.path
-		let  path2  = this.props.params.path2
 		this.state = {
-			currentStore: StoreTemplate,
-			path: path,
-			path2: path2
+			currentStore: StoreTemplate
 		}	
 	}
 
 	componentDidUpdate() {		
-		let  path  = this.props.params.path
-		let  path2  = this.props.params.path2
- 		
- 		this.setState({path: path, path2:path2})
 
 	}
 
@@ -43,7 +35,7 @@ export default class App extends React.Component {
 		return (
 			<div className='Page'>
 				<AltContainer 
-					stores= {[StoreTemplate]}
+					stores= {[this.state.currentStore]}
 					inject={{
 						value: () => [value]
 				}}

@@ -15,7 +15,9 @@ body {
 	margin:							auto;
 	line-height: 					1em;
 	width: 							95%;
-	height: 100%;
+	min-width: 500px;
+	max-width: 750px;
+	
 	border: 0px;
 	box-shadow: -5px 5px 100px #AAAAAA;
 }
@@ -55,52 +57,96 @@ body {
 	LeftSideBar
  */
 .SideBar {
+	position:relative;
 	float:right;
 	color:white;
-	margin-top:-1.15em;
-
+	margin-left:0;
+	margin-top:-0.2em;
 	background-color:#1A2C44;
-	float:right;
+	width:100%;
+	height:75px;
+	border:none;
+	border-width: 0 1px 1px 1px; 
+	opacity: 10;
 	text-align: right;
-	width:150px;
+	z-index: 0;
+	font-size:0.85em;
+
 	box-shadow: -1.5px -0.5px 5px #000000;
+
 }
 
 .SideBar-collapse {
-	margin-top:-1.15em;
-	float:right;
+	position:relative;
 	color:white;
-	background: url('./images/collapse-menu.png');
+	background-color:#0E1B2C;
+	background: url('./images/login.png');
 	background-size: cover;
 	float:right;
 	text-align: right;
 	width:30px;
 	height:30px;
-	box-shadow: -1.5px -0.5px 5px #000000;
+
+	box-shadow: 1.5px 0.5px 20px #000000;
 }
 
-.collapseIcon {
-	background: url('./images/collapse-menu.png');
-	background-size: cover;
-	background-color:#53687A;
-	float:right;
-	width:15px;
-	height:15px;
+.SideBar input {
+	float:top;
+	border: 0px;
+	margin-left:0.5em;
+	margin-bottom: 0.25em;
+	background: #1A519B;
+	color:white;
+	font-size: 0.75em;
+	font-variant: small-caps;
+	padding:5px 5px;
+	vertical-align: middle;
 }
 
-.SideBar ul {
-	margin-top:0.5em;
+.SideBar button {
+	border: 0px;
+	margin-top:0.75em;
+	margin-right: 0.25em;
+	margin-left: 0.25em;
+	background: transparent;
+	color:white;
+	font-size: 1em;
+	font-variant: small-caps;
+	border:dotted;
+	border-width:1px;
+}
+
+.SideBar button:hover{
+	background-color: #164F9A;
+	transition: 0.2s
+}
+
+.SideBar button:focus {
+	outline:none;
+}
+.NavBar-collapse {
 	float:left;
-}
-.SideBar li{
-	list-style: none;
+	margin-left:-0.25em;
+	margin-top: -0.25em;
+	width:101.25%;
+	height:30px;
+	background-color: #0E1B2C;
+	box-shadow: -1.5px -0.5px 5px #000000;
 
+	  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
 }
 
 .Link {
-	
-	margin-right: 0em;
+	float:left;
 	border: 0px;
+	margin-left:0.5em;
+	margin-top:0.75em;
 	background: transparent;
 	color:white;
 	font-size: 1em;
@@ -120,15 +166,22 @@ body {
  */
 .Content {
 	float: left;
-	padding-top:1em;
-	margin-top:0.15em;
-	width:99.9%;
+	width:100%;
 	background: linear-gradient(to bottom , 
-		transparent,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7, #CCD7E7, #CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7, transparent);
-	height: 47em;
+	transparent,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7, #CCD7E7, #CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7, transparent);
+	
 	border: solid;
 	border-width: 0 0px 0px 0px;
 	border-color: #C7D0DD;
 	
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
 }
 

@@ -2,8 +2,7 @@ import './main.css'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import routes from './routes.js'
-import {Router, Route, IndexRoute, browserHistory} from 'react-router'
+import App from './components/App.jsx'
 
 
 //if we ever want to persist the data to local storage, we should use this.
@@ -17,11 +16,4 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 //import persist from './libs/persist'
 //
 //persist(alt, storage, 'app')
-
-ReactDOM.render(	
-	<Router location={browserHistory} history={browserHistory}
-			onUpdate={() => window.scrollTo(0,0)}>
-		{routes}
-	</Router>,
-	document.getElementById('app')
-	)
+ReactDOM.render(<App />, document.getElementById('app'))
