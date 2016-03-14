@@ -41,7 +41,7 @@ export default class App extends React.Component {
 				}}
 				>
 				
-				<PageComponent path={this.state.path} path2={this.state.path2} />
+				<PageComponent path={window.location.pathname} path2={this.state.path2} />
 
 				</AltContainer>
 			</div>

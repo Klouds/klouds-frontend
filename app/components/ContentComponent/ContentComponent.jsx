@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import LoginBar from '../LoginBar/LoginBar.jsx'
-import WelcomePost from '../Posts/WelcomePost.jsx'
-import WhatWeDoPost from '../Posts/WhatWeDoPost.jsx'
+import Post from '../Posts/Post.jsx'
+
+
 
 
 export default class ContentComponent extends React.Component {
@@ -10,11 +11,8 @@ export default class ContentComponent extends React.Component {
 		super(props)
 		
 		//import the value from Alt Store
-		const {value} = this.props
+		const {value, path} = this.props
 
-		this.state = {
-			content: 'initial coneten'
-		}
 	}
 
 	componentWillMount() {
@@ -22,28 +20,25 @@ export default class ContentComponent extends React.Component {
 	}
 
 	render() {
-
+		
 		var posts = []
 
-		
-
-		posts.push (new WelcomePost())
-		posts.push (new WhatWeDoPost())
-
+		posts.push(<Post key='welcome' filename='WelcomePost'/>)
+		posts.push(<Post key='fuckoff' filename='FuckOffPost'/>)
+	
 		var body = []
 
 		for (let i = 0; i<posts.length; i++) {
 			body.push(
-				<div key={i} className="Post">
-					
-					{posts[i].message}
-					<br/>
-
+				<div className="Post">
+				{posts[i]}
 				</div>
 			)			
 		}
+
 		return (
 			<div key='content' className="Content">
+
 				<table width="100%">
 				<tbody>
 				<tr>

@@ -45,7 +45,13 @@ const common = {
 			{ 
 				test: /\.json$/, 
 				loaders: ['json-loader']
+			},
+			{ 
+				test: /\.md$/, 
+				loader: "markdown?gfm=true" 
 			}
+
+
 		]
 	},
 	plugins: [

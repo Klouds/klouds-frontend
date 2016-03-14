@@ -9,7 +9,7 @@ export default class PageComponent extends React.Component {
 		super(props)
 		
 		//import the value from Alt Store
-		const {value} = this.props
+		const {value, path} = this.props
 	}
 
 	componentWillMount() {
@@ -18,12 +18,9 @@ export default class PageComponent extends React.Component {
 
 	render() {
 		return (
-			<div>
-
+			<div>						
 						<HeaderComponent />
-
-						<ContentComponent path={this.props.path} path2={this.props.path2} />
-
+						<ContentComponent path={this.props.path} />
 
 			</div>
 			)
