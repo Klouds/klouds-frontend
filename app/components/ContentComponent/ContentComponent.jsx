@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import SideBarComponent from '../SideBarComponent/SideBarComponent.jsx'
+import LoginBar from '../LoginBar/LoginBar.jsx'
+import WelcomePost from '../Posts/WelcomePost.jsx'
+import WhatWeDoPost from '../Posts/WhatWeDoPost.jsx'
+
 
 export default class ContentComponent extends React.Component {
 	constructor(props) {
@@ -8,6 +11,10 @@ export default class ContentComponent extends React.Component {
 		
 		//import the value from Alt Store
 		const {value} = this.props
+
+		this.state = {
+			content: 'initial coneten'
+		}
 	}
 
 	componentWillMount() {
@@ -15,27 +22,44 @@ export default class ContentComponent extends React.Component {
 	}
 
 	render() {
+
+		var posts = []
+
+		
+
+		posts.push (new WelcomePost())
+		posts.push (new WhatWeDoPost())
+
+		var body = []
+
+		for (let i = 0; i<posts.length; i++) {
+			body.push(
+				<div key={i} className="Post">
+					
+					{posts[i].message}
+					<br/>
+
+				</div>
+			)			
+		}
 		return (
-			<div className="Content">
+			<div key='content' className="Content">
 				<table width="100%">
 				<tbody>
 				<tr>
 				<td>
-				 <SideBarComponent />
+				 <LoginBar key='loginbar' />
 				</td>
 				</tr>
 				<tr>
-				<td height="75px">
-					Rawr
+				<td height="50px">
+					Ad space
 				</td>
 				</tr>
 				<tr>
 				<td>
-				Put some content in here!
-				Yay!<br/>It grows! <br/>
-				<br/>
-				<br/>
-				BWHAHAHA<br/><br/>
+				{body}
+
 				</td>
 				</tr>
 				</tbody>

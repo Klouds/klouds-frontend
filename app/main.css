@@ -17,7 +17,8 @@ body {
 	width: 							95%;
 	min-width: 500px;
 	max-width: 750px;
-	
+	display: flex;
+	flex-direction: column;
 	border: 0px;
 	box-shadow: -5px 5px 100px #AAAAAA;
 }
@@ -79,7 +80,6 @@ body {
 .SideBar-collapse {
 	position:relative;
 	color:white;
-	background-color:#0E1B2C;
 	background: url('./images/login.png');
 	background-size: cover;
 	float:right;
@@ -185,3 +185,30 @@ body {
                                   not supported by any browser */
 }
 
+.Post {
+	width: 100%;
+	background-color: #D7E1F0;
+	margin: 0.1em 0.1em 0.1em 0.1em;
+	text-align: left;
+	font-size:14px;
+}
+
+.Post h1 {
+	font-size:1.5em;
+	text-align: left;
+}
+
+.Post ul {
+	text-align:left;
+	list-style-type: circle;
+
+}
+
+.Post li {
+	margin-left:1em;
+}
+
+.Post img {
+	float: left;
+
+}

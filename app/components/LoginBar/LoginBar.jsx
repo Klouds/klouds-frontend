@@ -4,7 +4,7 @@ import {Link} from 'react-router'
 import ReactCollapse from 'react-collapse'
 import {presets} from 'react-motion'
 
-export default class SideBarComponent extends React.Component {
+export default class LoginBar extends React.Component {
 	constructor(props) {
 		super(props)
 		
@@ -24,10 +24,10 @@ export default class SideBarComponent extends React.Component {
 		var body = []
 
 			body.push(
-			<ReactCollapse className="SideBar" isOpened={this.state.expanded} springConfig={presets.wobbly}>
+			<ReactCollapse key='1' className="SideBar" isOpened={this.state.expanded} springConfig={presets.wobbly}>
 					<div >
-					<input defaultValue="Username"/>
-					<input defaultValue="Password"/>
+					<input key='username' defaultValue="Username"/>
+					<input key='password' defaultValue="Password"/>
 					<button >Login</button>
 					</div>	
 			</ReactCollapse>
@@ -36,11 +36,11 @@ export default class SideBarComponent extends React.Component {
 
 		return (
 				<div className="NavBar-collapse">
-					<button className="Link" to="/">Home</button>
-					<button className="Link" to="/pricing">Pricing</button>
-					<button className="Link" to="/products">Products</button>
-					<button className="Link" to="/about_us">About Us</button>
-					<button className="Link" to="/docs">Documentation</button>
+					<button key='home' className="Link" to="/">Home</button>
+					<button key='pricing' className="Link" to="/pricing">Pricing</button>
+					<button key='products' className="Link" to="/products">Products</button>
+					<button key='about' className="Link" to="/about_us">About Us</button>
+					<button key='docs'className="Link" to="/docs">Documentation</button>
 					<div className="SideBar-collapse" onClick={this.toggleSideBar.bind(this)} /> 
 					<br/>
 					{body}

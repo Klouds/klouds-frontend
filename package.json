@@ -58,6 +58,7 @@
     "react-height": "^2.0.4",
     "react-motion": "^0.4.2",
     "react-router": "^2.0.1",
+    "react-wysiwyg-editor": "0.0.7",
     "request-json": "^0.5.5",
     "tls": "0.0.1"
   }
