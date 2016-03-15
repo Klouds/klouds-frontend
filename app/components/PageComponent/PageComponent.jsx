@@ -2,6 +2,7 @@ import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import HeaderComponent from '../HeaderComponent/HeaderComponent.jsx'
 import ContentComponent from '../ContentComponent/ContentComponent.jsx'
+import LoginBar from '../LoginBar/LoginBar.jsx'
 import AlloyEditor from 'alloyeditor'
 
 export default class PageComponent extends React.Component {
@@ -18,7 +19,8 @@ export default class PageComponent extends React.Component {
 
 	render() {
 		return (
-			<div>						
+			<div>		
+						<LoginBar />				
 						<HeaderComponent />
 						<ContentComponent path={this.props.path} />
 

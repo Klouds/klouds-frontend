@@ -24,7 +24,8 @@ export default class ContentComponent extends React.Component {
 		var posts = []
 
 		posts.push(<Post key='welcome' filename='WelcomePost'/>)
-		posts.push(<Post key='fuckoff' filename='FuckOffPost'/>)
+		posts.push(<Post key='fuckoff' filename='WhatWeOffer'/>)
+		posts.push(<Post key='readme' filename='TheThing'/>)
 	
 		var body = []
 
@@ -39,13 +40,8 @@ export default class ContentComponent extends React.Component {
 		return (
 			<div key='content' className="Content">
 
-				<table width="100%">
+				<table >
 				<tbody>
-				<tr>
-				<td>
-				 <LoginBar key='loginbar' />
-				</td>
-				</tr>
 				<tr>
 				<td height="50px">
 					Ad space

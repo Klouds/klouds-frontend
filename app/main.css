@@ -1,7 +1,7 @@
 body {
 	background: 					#161E29;
-	font-family: 					sans-serif;
-	font-variant: 					small-caps;
+	font-family: 					'Trebuchet MS';
+
 }
 
 /*
@@ -9,14 +9,13 @@ body {
 	Handles the whole page
  */
 .Page {
+	font-variant:unicase;
 	position:						float;
 	background:#FFFFFF;
 	border-radius: 0.5em 0.5em 0.5em 0.5em;
 	margin:							auto;
-	line-height: 					1em;
-	width: 							95%;
-	min-width: 500px;
-	max-width: 750px;
+	line-height: 					1.5em;
+	width: 							755px;
 	display: flex;
 	flex-direction: column;
 	border: 0px;
@@ -36,7 +35,7 @@ body {
 	background-size: cover;
 	border-radius: 0.25em 0.25em 0 0 ;
 	box-shadow: -1.5px -0.5px 10px #000000;
-	height:100px;
+	height:75px;
 }
 
 /*
@@ -74,7 +73,7 @@ body {
 	font-size:0.85em;
 
 	box-shadow: -1.5px -0.5px 5px #000000;
-
+	
 }
 
 .SideBar-collapse {
@@ -125,14 +124,15 @@ body {
 	outline:none;
 }
 .NavBar-collapse {
+	position:fixed;
 	float:left;
-	margin-left:-0.25em;
-	margin-top: -0.25em;
-	width:101.25%;
-	height:30px;
+	margin-left:-0.05em;
+	margin-top: -0.5em;
+	width:760px;
+	height: 2em;
 	background-color: #0E1B2C;
 	box-shadow: -1.5px -0.5px 5px #000000;
-
+	z-index: 1;
 	  -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
   -khtml-user-select: none;    /* Konqueror */
@@ -166,7 +166,7 @@ body {
  */
 .Content {
 	float: left;
-	width:100%;
+	width:755px;
 	background: linear-gradient(to bottom , 
 	transparent,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7, #CCD7E7, #CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7, transparent);
 	
@@ -186,29 +186,58 @@ body {
 }
 
 .Post {
-	width: 100%;
+	width:745px;
 	background-color: #D7E1F0;
 	margin: 0.1em 0.1em 0.1em 0.1em;
 	text-align: left;
-	font-size:14px;
+	font-size:1em;
+	word-wrap: break-word;
+
+}
+
+.Post h1, h2, h3,h4,h5 {
+	
+	text-align: center;
 }
 
 .Post h1 {
 	font-size:1.5em;
-	text-align: left;
+	color:#1974FF;
+}
+.Post h2 {
+	font-size:1.35em;
+	color:#4083F5;
+}
+.Post h3 {
+	font-size:1.25em;
+	color:#79AFFF;
+}
+.Post h4 {
+	font-size:1.15em;
+	color:black;
 }
 
-.Post ul {
-	text-align:left;
-	list-style-type: circle;
 
+.Post ul {
+
+	list-style-type: dotted;
+	font-size:0.75em;
+	margin-left: 4em;
+	
 }
 
 .Post li {
-	margin-left:1em;
+
 }
 
+.Post p {
+	font-size:0.9em;
+	text-indent: 4em;
+}
 .Post img {
-	float: left;
-
+	position:relative;
+	align:right;
+}
+.Post a, a:visited {
+	color:#7BABF5;
 }
