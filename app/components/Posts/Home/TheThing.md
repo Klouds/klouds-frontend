@@ -63,7 +63,7 @@ ___
 ____
 
 + Your nodes need to be running the docker API 
-+ 
+
 ```
 sudo docker -H 0.0.0.0:2375 -H unix:///var/run/docker.sock -d 
 ```
@@ -72,7 +72,6 @@ sudo docker -H 0.0.0.0:2375 -H unix:///var/run/docker.sock -d
     - containers
     - nodes
     - applications
-    
 + You should have golang 1.5+ available on your machine.
 + kDaemon is only tested on Linux. Any machine with an exposed Docker API should be able to become a node however.
 

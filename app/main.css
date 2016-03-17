@@ -237,3 +237,10 @@ body {
 .Post a, a:visited {
 	color:#7BABF5;
 }
+.Post pre {
+	background:rgba(225,235,255,0.35) ;
+	float:middle;
+	font-variant: small-caps;
+	margin:auto;
+	width:100%;
+}
