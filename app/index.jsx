@@ -3,6 +3,7 @@ import './main.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App.jsx'
+import routes from './routes.js'
 
 
 //if we ever want to persist the data to local storage, we should use this.

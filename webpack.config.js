@@ -25,7 +25,7 @@ const common = {
 	},
 	output: {
 		path: PATHS.build,
-		filename: '[name].js'
+		filename: '/[name].js'
 	},
 	module: {
 		loaders: [
@@ -54,14 +54,20 @@ const common = {
 
 		]
 	},
+	proxy: {
+	  '/*/*': {
+	    target: '/',
+	    secure: false,
+	  },
+	},
 	plugins: [
-		new HtmlWebpackPlugin({
-			template: 'node_modules/html-webpack-template/index.html',
-			title: 'Klouds | ',
-			appMountId: 'app',
-			inject: false,
-			favicon: './app/images/favicon.ico'
-		})
+	new HtmlWebpackPlugin({
+		template: 'node_modules/html-webpack-template/index.html',
+		title: 'Klouds | ',
+		appMountId: 'app',
+		inject: false,
+		favicon: 'app/images/favicon.ico'
+	})
 	]
 }
 

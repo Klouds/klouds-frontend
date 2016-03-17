@@ -8,25 +8,18 @@ import mdloader from 'markdown-loader'
 export default class Post extends React.Component {
 	constructor(props) {
         super(props);
-        console.log(this.props)
         const {filename} = this.props
-
-        console.log(filename)
-      
         var file = require("html!markdown!./" + filename + ".md")
 
-        this.state = { contents: file };
+        this.contents = file;
       
     }
 
-    rawMarkup() {
-    	return{ __html: file}
-    }
 
     render() {
 
     	return(
-            <ReactMarkdown source={this.state.contents} />
+            <ReactMarkdown source={this.contents} />
         )
     }
 }

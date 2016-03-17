@@ -17,7 +17,7 @@ export default class App extends React.Component {
 		super(props)
 
 		this.state = {
-			currentStore: StoreTemplate
+			currentStore: StoreTemplate,
 		}	
 	}
 
@@ -41,11 +41,12 @@ export default class App extends React.Component {
 				}}
 				>
 				
-				<PageComponent path={window.location.pathname} path2={this.state.path2} />
+				<PageComponent path={this.state.path}/>
 
 				</AltContainer>
 			</div>
 		)
 	}
+
 
 }

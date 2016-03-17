@@ -3,7 +3,7 @@ ___
 ___
 
 At Klouds, you can get your applications hosted and distributed for no to low cost.
-<img src="../../images/login.png" style="position:relative;float:right;height:50px;">
+<img src="../../../images/login.png" style="position:relative;float:right;height:50px;">
 </img>
 
 
@@ -11,6 +11,5 @@ At Klouds, you can get your applications hosted and distributed for no to low co
 * Monetization platform for development of applications
 
 
-___
 
 [logo]: ../../images/login.png

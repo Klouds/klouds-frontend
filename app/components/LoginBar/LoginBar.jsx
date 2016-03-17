@@ -9,7 +9,7 @@ export default class LoginBar extends React.Component {
 		super(props)
 		
 		//import the value from Alt Store
-		const {value} = this.props
+		const {value, nav} = this.props
 		this.state = {
 			expanded :false
 		}
@@ -36,11 +36,11 @@ export default class LoginBar extends React.Component {
 
 		return (
 				<div className="NavBar-collapse">
-					<button key='home' className="Link" to="/">Home</button>
-					<button key='pricing' className="Link" to="/pricing">Pricing</button>
-					<button key='products' className="Link" to="/products">Products</button>
-					<button key='about' className="Link" to="/about_us">About Us</button>
-					<button key='docs'className="Link" to="/docs">Documentation</button>
+					<button key='home' onClick={this.clickedNav.bind(this, '/')} className="Link" >Home</button>
+					<button key='pricing' onClick={this.clickedNav.bind(this, '/pricing')} className="Link" > Pricing</button>
+					<button key='products' onClick={this.clickedNav.bind(this, '/products')} className="Link" >Products</button>
+					<button key='about' onClick={this.clickedNav.bind(this, '/about')} className="Link" to="/about_us">About Us</button>
+					<button key='docs' onClick={this.clickedNav.bind(this, '/docs')} className="Link" to="/docs">Documentation</button>
 					<div className="SideBar-collapse" onClick={this.toggleSideBar.bind(this)} /> 
 					<br/>
 					{body}
@@ -53,4 +53,8 @@ export default class LoginBar extends React.Component {
 		this.setState({expanded: !this.state.expanded})
 	}
 
+	clickedNav(path){
+		console.log(path)
+		this.props.nav(path)
+	}
 }

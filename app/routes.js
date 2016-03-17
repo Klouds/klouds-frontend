@@ -1,12 +1,13 @@
 import React from 'react'
-import {Route, IndexRoute} from 'react-router'
+import {Route, IndexRoute, Router, browserHistory} from 'react-router'
 
 import App from './components/App.jsx'
 
 const routes = (
-	<Route>
+	<Router history={browserHistory}>
 	    <Route path="/" component={App} />
-	</Route>
+
+	</Router>
 
 )
 

@@ -18,8 +18,7 @@ body {
 	width: 							755px;
 	display: flex;
 	flex-direction: column;
-	border: 0px;
-	box-shadow: -5px 5px 100px #AAAAAA;
+	box-shadow: -1.5px -0.5px 20px #FFFFFF;
 }
 
 
@@ -28,7 +27,7 @@ body {
 	--Header	
 */
 .Header {
-	background: url("./images/header_banner.jpg");
+	background: url("/app/images/header_banner.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: 60%; 
@@ -169,10 +168,7 @@ body {
 	width:755px;
 	background: linear-gradient(to bottom , 
 	transparent,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7, #CCD7E7, #CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7,#CCD7E7, transparent);
-	
-	border: solid;
-	border-width: 0 0px 0px 0px;
-	border-color: #C7D0DD;
+
 	
 }
 .noselect {
@@ -187,11 +183,11 @@ body {
 
 .Post {
 	width:745px;
-	background-color: #D7E1F0;
 	margin: 0.1em 0.1em 0.1em 0.1em;
 	text-align: left;
 	font-size:1em;
 	word-wrap: break-word;
+	border-radius: 0.0 0.0 0.5em 0.5em;
 
 }
 
