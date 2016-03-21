@@ -65,18 +65,56 @@ export default class LoginBar extends React.Component {
 		} else {
 			body.push(
 				<div key='loggedin'>
+					
 					<div onClick={this.clickedNav.bind(this, '/user/profile')} className="HoverWrap">
+						<table>
+						<tbody>
+						<tr>
+						<td>
 						<img src='/app/images/icon-profile.png' />
+						</td>
+						</tr>
+						<tr>
+						<td>
 						<p className="HoverText"> Profile </p>
+						</td>
+						</tr>
+						</tbody>
+						</table>
 					</div>
+
 					<div onClick={this.clickedNav.bind(this, '/user/apps')} className="HoverWrap">
+						<table>
+						<tbody>
+						<tr>
+						<td>
 						<img src='/app/images/network-icon.png' />
-						<p className="HoverText"> Your Apps </p>
+						</td>
+						</tr>
+						<tr>
+						<td>
+						<p className="HoverText"> My Apps </p>
+						</td>
+						</tr>
+						</tbody>
+						</table>
 					</div>
 
 					<div onClick={this.clickedNav.bind(this, '/user/settings')} className="HoverWrap">
+						<table>
+						<tbody>
+						<tr>
+						<td>
 						<img src='/app/images/settings-icon.png' />
+						</td>
+						</tr>
+						<tr>
+						<td>
 						<p className="HoverText"> Settings </p>
+						</td>
+						</tr>
+						</tbody>
+						</table>
 					</div>
 					<p style={divstyle}> Logged in as: {this.props.user.username} </p>
 				</div>

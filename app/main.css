@@ -78,7 +78,6 @@ body {
 	margin-top:-0.2em;
 	background-color:#1A2C44;
 	width:100%;
-	height:75px;
 	border:none;
 	border-width: 0 1px 1px 1px; 
 	opacity: 10;
@@ -127,8 +126,7 @@ body {
 }
 
 .LoginBar img {
-	margin-top:1em;
-	margin-left:1em;
+
 	height:2.5em;
 }
 
@@ -272,19 +270,23 @@ This is where stupid user bar goes
 	opacity:0;
 	margin-top:-1.0em;
 	height:0.5em;
+	text-align: center;
 	-webkit-transition: visibility opacity 0.2s;
 }
 
 .HoverWrap {
 	display:inline-block;
 	text-align: center;
+	margin-top:1em;
+	margin-left:1em;
+	font-size:0.75em;
 }
 
 .HoverWrap:hover .HoverText{
 
 	visibility: visible;
-	font-size:1em;
+	
 	opacity:1;
-	text-indent: 0.5em;
+
 
 }
