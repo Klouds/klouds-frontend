@@ -1,60 +1,115 @@
 import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import {Link} from 'react-router'
+import {
+	Link
+}
+from 'react-router'
 import ReactCollapse from 'react-collapse'
-import {presets} from 'react-motion'
+import {
+	presets
+}
+from 'react-motion'
 
 export default class LoginBar extends React.Component {
-	constructor(props) {
-		super(props)
-		
+	constructor( props ) {
+		super( props )
+
 		//import the value from Alt Store
-		const {value, nav} = this.props
+		const {
+			value, nav, expanded, user, loginAction
+		} = this.props
+
 		this.state = {
-			expanded :false
+			username: '',
+			password: ''
 		}
+
+
 	}
 
 	componentWillMount() {
 
 	}
 
+	checkEnter( e ) {
+		if ( e.charCode === 13 ) {
+			this.loginButtonClicked()
+		}
+	}
+
 	render() {
 
-		var body = []
+		var divstyle = {
+			float: 'right',
+			verticalAlign: 'bottom'
+		}
 
+		var body = []
+		if ( this.props.user.username === 'loggedOut' ) {
 			body.push(
-			<ReactCollapse key='1' className="SideBar" isOpened={this.state.expanded} springConfig={presets.wobbly}>
-					<div >
-					<input key='username' defaultValue="Username"/>
-					<input key='password' defaultValue="Password"/>
-					<button >Login</button>
-					</div>	
-			</ReactCollapse>
+				<div key='loggedout'>
+					<input key='username' 
+					onChange={this.HandleLoginChange.bind(this)}
+					onKeyPress={this.checkEnter.bind(this)}/>
+
+					<input key='password' 
+					type='password' 
+					onChange={this.HandlePasswordChange.bind(this)}
+					onKeyPress={this.checkEnter.bind(this)} />
+
+					<button onClick={this.loginButtonClicked.bind(this)} >
+					Login
+					</button>
+				</div>
 			)
-		
+		} else {
+			body.push(
+				<div key='loggedin'>
+					<div onClick={this.clickedNav.bind(this, '/user/profile')} className="HoverWrap">
+						<img src='/app/images/icon-profile.png' />
+						<p className="HoverText"> Profile </p>
+					</div>
+					<div onClick={this.clickedNav.bind(this, '/user/apps')} className="HoverWrap">
+						<img src='/app/images/network-icon.png' />
+						<p className="HoverText"> Your Apps </p>
+					</div>
+
+					<div onClick={this.clickedNav.bind(this, '/user/settings')} className="HoverWrap">
+						<img src='/app/images/settings-icon.png' />
+						<p className="HoverText"> Settings </p>
+					</div>
+					<p style={divstyle}> Logged in as: {this.props.user.username} </p>
+				</div>
+			)
+		}
+
+
 
 		return (
-				<div className="NavBar-collapse">
-					<button key='home' onClick={this.clickedNav.bind(this, '/')} className="Link" >Home</button>
-					<button key='pricing' onClick={this.clickedNav.bind(this, '/pricing')} className="Link" > Pricing</button>
-					<button key='products' onClick={this.clickedNav.bind(this, '/products')} className="Link" >Products</button>
-					<button key='about' onClick={this.clickedNav.bind(this, '/about')} className="Link" to="/about_us">About Us</button>
-					<button key='docs' onClick={this.clickedNav.bind(this, '/docs')} className="Link" to="/docs">Documentation</button>
-					<div className="SideBar-collapse" onClick={this.toggleSideBar.bind(this)} /> 
-					<br/>
-					{body}
-				</div>
-				)
+			<ReactCollapse className="LoginBar" isOpened={this.props.expanded} springConfig={presets.wobbly}>
+				{body} 
+			</ReactCollapse>
+		)
 
 	}
 
-	toggleSideBar() {
-		this.setState({expanded: !this.state.expanded})
+	clickedNav( path ) {
+		this.props.nav( path )
 	}
 
-	clickedNav(path){
-		console.log(path)
-		this.props.nav(path)
+	loginButtonClicked() {
+		this.props.loginAction( this.state.username, this.state.password )
+	}
+
+	HandleLoginChange( e ) {
+		this.setState( {
+			username: e.target.value
+		} )
+	}
+
+	HandlePasswordChange( e ) {
+		this.setState( {
+			password: e.target.value
+		} )
 	}
 }

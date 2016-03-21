@@ -55,25 +55,7 @@ body {
 /*
 	LeftSideBar
  */
-.SideBar {
-	position:relative;
-	float:right;
-	color:white;
-	margin-left:0;
-	margin-top:-0.2em;
-	background-color:#1A2C44;
-	width:100%;
-	height:75px;
-	border:none;
-	border-width: 0 1px 1px 1px; 
-	opacity: 10;
-	text-align: right;
-	z-index: 0;
-	font-size:0.85em;
 
-	box-shadow: -1.5px -0.5px 5px #000000;
-	
-}
 
 .SideBar-collapse {
 	position:relative;
@@ -88,8 +70,28 @@ body {
 	box-shadow: 1.5px 0.5px 20px #000000;
 }
 
-.SideBar input {
-	float:top;
+.LoginBar {
+	position:relative;
+	float:left;
+	color:white;
+	margin-left:0;
+	margin-top:-0.2em;
+	background-color:#1A2C44;
+	width:100%;
+	height:75px;
+	border:none;
+	border-width: 0 1px 1px 1px; 
+	opacity: 10;
+	text-align: left;
+	z-index: -10;
+	font-size:0.85em;
+	box-shadow: -1.5px -0.5px 5px #000000;
+	vertical-align: bottom;
+	
+}
+
+
+.LoginBar input {
 	border: 0px;
 	margin-left:0.5em;
 	margin-bottom: 0.25em;
@@ -101,11 +103,12 @@ body {
 	vertical-align: middle;
 }
 
-.SideBar button {
+.LoginBar button {
 	border: 0px;
 	margin-top:0.75em;
 	margin-right: 0.25em;
 	margin-left: 0.25em;
+	padding-top:0.5em;
 	background: transparent;
 	color:white;
 	font-size: 1em;
@@ -114,15 +117,28 @@ body {
 	border-width:1px;
 }
 
-.SideBar button:hover{
+.LoginBar button:hover{
 	background-color: #164F9A;
 	transition: 0.2s
 }
 
-.SideBar button:focus {
+.LoginBar button:focus {
 	outline:none;
 }
-.NavBar-collapse {
+
+.LoginBar img {
+	margin-top:1em;
+	margin-left:1em;
+	height:2.5em;
+}
+
+.LoginBar img:hover {
+	background: #1E4A86;
+}
+
+
+
+.NavBar {
 	position:fixed;
 	float:left;
 	margin-left:-0.05em;
@@ -243,4 +259,32 @@ body {
 	font-variant: small-caps;
 	margin:auto;
 	width:100%;
+}
+
+
+/*
+This is where stupid user bar goes
+ */
+
+.HoverText {
+	color:#fff;
+	visibility: hidden;
+	opacity:0;
+	margin-top:-1.0em;
+	height:0.5em;
+	-webkit-transition: visibility opacity 0.2s;
+}
+
+.HoverWrap {
+	display:inline-block;
+	text-align: center;
+}
+
+.HoverWrap:hover .HoverText{
+
+	visibility: visible;
+	font-size:1em;
+	opacity:1;
+	text-indent: 0.5em;
+
 }
